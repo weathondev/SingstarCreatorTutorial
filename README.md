@@ -44,6 +44,7 @@ This leads us to the next step - running **OPL** via **uLaunchElf**
 
 # Setup OPL on your PS2
 
+See the [`ps2-home thread`](https://www.ps2-home.com/forum/viewtopic.php?f=50&t=3692) I used. The specific steps I took i describe below.
 Download OPL from here: [`OPL Project - v1.1.0 [Official Release]`](https://www.ps2-home.com/forum/viewtopic.php?t=11576), alternatively you can use the [`version I used`](https://github.com/weathondev/SingstarCreatorTutorial/raw/main/OPNPS2LD-v1.1.0-ifcaro_all-1791-5db29c2-2021-09-09.zip).
 Take the oldest, smallest and slowest USB drive you can find (PS2 has USB 1.1 so that limits the speed anyway), format it with FAT32 and copy the **OPNPS2LD.ELF** file on it.
 
@@ -52,8 +53,12 @@ TODO: configure network settings for OPL/samba on the PS2
 # Setup Samba shared folder on your Computer
 
 Why not just USB? While it might be slower, which probably would be unnoticable for Singstar (except for initial loading time, roughly 1/3 slower), it can't work for Singstar as OPL can only use one USB drive at once, which means that when you boot the game via network, it will work as it will switch from USB drive to microphones, but when you boot it via USB it needs the connection to the USB drive and can't connect to the microphones.
-
-TODO: setup on PC
+- Activate **SMB 1.0/CIFS File Sharing Support** via **activate/deactivate windows features dialog**.
+- No need to do any IP changes, a typical router setup will just give your PC a reserved IP address which won't change, same for your PS2
+- Create a folder on your C drive e.g. **PS2SMB** and put your Singstar.iso files (see below) there
+- Create a local User account on your PC e.g. **guest** with password **guest**
+- Share the **PS2SMB** folder via **advanced sharing**, make sure you give read & write rights to **guest**
+- Make sure your PC is turned on when you want to play Singstar & make sure it's in the same network as your PS2
 
 # Download Singstar Creator
 
@@ -68,6 +73,7 @@ Flow is the following:
 - go through each added song, right-click on it and click **Song überprüfen**, if it returns **TXT ist in Ordnung** the song is fine, sometimes it returns **...BPM ist zu schnell** which means you need to lower the BPM in the .txt file.
 - - the problem with this is, that when you adjust the BPM, the lyrics/mappings will be off and it's a real hassle to correct them. While it's not a perfect solution, it's a quick and dirty one so i recommend halving the BPM with the original Ultrastar, see next chapter.
 - Once all songs are fine you just click **DVD erstellen**, which will go a lot of stuff in the background (a lot of converting around etc.). You can watch this progress by checking the **Singstar1.log** file.
+- - It took me quite long to figure this out: When you hit **DVD erstellen** the very first time it will try to install .net framework 3.5 if it's not installed yet (its quite old). If you can just install it, that's great, for me it took me a while to figure out how to do it. At first I had to do all Windows Updates, and then I was able to activate .net framework 3.5 via **activate/deactivate windows features dialog**. When you just skip the .net framework installation, it will look like it creates the .iso, but the PS2 will get stuck loading it.
 - Once the program finishes it will have created a Singstar1.iso file. Copy it to your shared Samba drive and 
 
 ## Reducing BPM with the original Ultrastar (ingame editor)
