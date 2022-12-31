@@ -102,3 +102,7 @@ replace your txt file with it, now you can check it again in **Singstar Creator*
 7. Select OPLs ELF file (with O not X)
 8. Now OPL will be booted from USB stick, select the right ISO and start with (now with X)
 9. Have fun!
+
+# Support
+
+If you need support with any step just create a Github issue - if I have time i'll try to help, please just concretely describe on what you did already and what doesn't work.
