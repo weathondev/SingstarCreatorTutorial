@@ -47,8 +47,10 @@ This leads us to the next step - running **OPL** via **uLaunchElf**
 See the [`ps2-home thread`](https://www.ps2-home.com/forum/viewtopic.php?f=50&t=3692) I used. The specific steps I took i describe below.
 Download OPL from here: [`OPL Project - v1.1.0 [Official Release]`](https://www.ps2-home.com/forum/viewtopic.php?t=11576), alternatively you can use the [`version I used`](https://github.com/weathondev/SingstarCreatorTutorial/raw/main/OPNPS2LD-v1.1.0-ifcaro_all-1791-5db29c2-2021-09-09.zip).
 Take the oldest, smallest and slowest USB drive you can find (PS2 has USB 1.1 so that limits the speed anyway), format it with FAT32 and copy the **OPNPS2LD.ELF** file on it.
-
-TODO: configure network settings for OPL/samba on the PS2
+Copy the three config files on it, make sure to adjust them to your own needs (specifically the network one):
+[`conf_game.cfg`](https://github.com/weathondev/SingstarCreatorTutorial/blob/main/conf_game.cfg) global game settings to mainly disable pademu
+[`conf_opl.cfg`](https://github.com/weathondev/SingstarCreatorTutorial/blob/main/conf_opl.cfg) mainly to view network games by default
+[`conf_network.cfg`](https://github.com/weathondev/SingstarCreatorTutorial/blob/main/conf_network.cfg) IP settings for PS2 and to point to the PC with samba shared folder
 
 # Setup Samba shared folder on your Computer
 
@@ -88,3 +90,15 @@ Flow is the following:
 It will now create a .txt file with the same name in 
 C:\Users\<User>\AppData\Local\VirtualStore\Program Files (x86)\UltraStar\Songs
 replace your txt file with it, now you can check it again in **Singstar Creator**.
+
+# Run the custom Singstar DVD
+
+1. Insert the burned DVD into the PS2
+2. Insert the USB drive into the PS2
+3. Connect your network cable (PS2 same network as PC!)
+4. Boot up PS2
+5. Select Browse HDD (with O not X)
+6. Select Mass (with O not X)
+7. Select OPLs ELF file (with O not X)
+8. Now OPL will be booted from USB stick, select the right ISO and start with (now with X)
+9. Have fun!
