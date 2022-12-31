@@ -51,6 +51,8 @@ TODO: configure network settings for OPL/samba on the PS2
 
 # Setup Samba shared folder on your Computer
 
+Why not just USB? While it might be slower, which probably would be unnoticable for Singstar (except for initial loading time, roughly 1/3 slower), it can't work for Singstar as OPL can only use one USB drive at once, which means that when you boot the game via network, it will work as it will switch from USB drive to microphones, but when you boot it via USB it needs the connection to the USB drive and can't connect to the microphones.
+
 TODO: setup on PC
 
 # Download Singstar Creator
@@ -66,5 +68,17 @@ Flow is the following:
 - go through each added song, right-click on it and click **Song überprüfen**, if it returns **TXT ist in Ordnung** the song is fine, sometimes it returns **...BPM ist zu schnell** which means you need to lower the BPM in the .txt file.
 - - the problem with this is, that when you adjust the BPM, the lyrics/mappings will be off and it's a real hassle to correct them. While it's not a perfect solution, it's a quick and dirty one so i recommend halving the BPM with the original Ultrastar, see next chapter.
 - Once all songs are fine you just click **DVD erstellen**, which will go a lot of stuff in the background (a lot of converting around etc.). You can watch this progress by checking the **Singstar1.log** file.
+- Once the program finishes it will have created a Singstar1.iso file. Copy it to your shared Samba drive and 
 
 ## Reducing BPM with the original Ultrastar (ingame editor)
+
+- Install [`original Ultrastar`](https://github.com/weathondev/SingstarCreatorTutorial/raw/main/UltraStar-0.5.2.exe).
+- Copy the songs that you want to check (too high BPM) to C:\Program Files (x86)\UltraStar\Songs
+- Start up Ultrastar and go to the song selection
+- Select the song and hit **E** to enter the edit mode
+- Hit **D** to half the BPM
+- Hit **S** to save the changes.
+
+It will now create a .txt file with the same name in 
+C:\Users\<User>\AppData\Local\VirtualStore\Program Files (x86)\UltraStar\Songs
+replace your txt file with it, now you can check it again in **Singstar Creator**.
