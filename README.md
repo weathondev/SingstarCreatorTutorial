@@ -76,7 +76,13 @@ Flow is the following:
 - - the problem with this is, that when you adjust the BPM, the lyrics/mappings will be off and it's a real hassle to correct them. While it's not a perfect solution, it's a quick and dirty one so i recommend halving the BPM with the original Ultrastar, see next chapter.
 - Once all songs are fine you just click **DVD erstellen**, which will go a lot of stuff in the background (a lot of converting around etc.). You can watch this progress by checking the **Singstar1.log** file.
 - - It took me quite long to figure this out: When you hit **DVD erstellen** the very first time it will try to install .net framework 3.5 if it's not installed yet (its quite old). If you can just install it, that's great, for me it took me a while to figure out how to do it. At first I had to do all Windows Updates, and then I was able to activate .net framework 3.5 via **activate/deactivate windows features dialog**. When you just skip the .net framework installation, it will look like it creates the .iso, but the PS2 will get stuck loading it.
-- Once the program finishes it will have created a Singstar1.iso file. Copy it to your shared Samba drive and 
+- Once the program finishes it will have created a Singstar1.iso file. Copy it to your shared Samba drive and
+
+## Issues with Singstar Creator
+
+- When adding multiple Songs in often gets confused with some files when converting which ends up in a mess. I can only recommend adding one song by one.
+- After converting each folder must contain a .scv (video file), .sca (audio file), .txt (the beat map), .bmp (cover image).
+- If you want to add a duett song, you need to use the option **Duett-Modus** where you need to choose which line who sings. Really bad UI unfortunately. This will create an .ini file. CAREFUL, once you click on **Duett-Modus** again, this file will always be overwritten, so make a backup before. You can NOT edit it with the tool, only recreate it from scratch, so be accurate when doing it. You could edit the .ini file manually afterwards but it's hard to guess which line is which.
 
 ## Reducing BPM with the original Ultrastar (ingame editor)
 
@@ -86,6 +92,16 @@ Flow is the following:
 - Select the song and hit **E** to enter the edit mode
 - Hit **D** to half the BPM
 - Hit **S** to save the changes.
+
+It will now create a .txt file with the same name in 
+C:\Users\<User>\AppData\Local\VirtualStore\Program Files (x86)\UltraStar\Songs
+replace your txt file with it, now you can check it again in **Singstar Creator**.
+
+## Use the above mentioned editor to fix the start time to match the downloaded audio file
+
+- Sometimes you just don't find a matching audio file on youtube, then you need to adjust the start time, which is called the GAP
+- With the editor you can increase (hit **0**) the GAP by 10 or decrease (hit **9**) it by 10
+- Hit **S** to save the changes afterwards
 
 It will now create a .txt file with the same name in 
 C:\Users\<User>\AppData\Local\VirtualStore\Program Files (x86)\UltraStar\Songs
