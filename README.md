@@ -78,11 +78,20 @@ Flow is the following:
 - - It took me quite long to figure this out: When you hit **DVD erstellen** the very first time it will try to install .net framework 3.5 if it's not installed yet (its quite old). If you can just install it, that's great, for me it took me a while to figure out how to do it. At first I had to do all Windows Updates, and then I was able to activate .net framework 3.5 via **activate/deactivate windows features dialog**. When you just skip the .net framework installation, it will look like it creates the .iso, but the PS2 will get stuck loading it.
 - Once the program finishes it will have created a Singstar1.iso file. Copy it to your shared Samba drive and
 
-## Issues with Singstar Creator
+## Common issues with Singstar Creator
 
 - When adding multiple Songs in often gets confused with some files when converting which ends up in a mess. I can only recommend adding one song by one.
 - After converting each folder must contain a .scv (video file), .sca (audio file), .txt (the beat map), .bmp (cover image).
 - If you want to add a duett song, you need to use the option **Duett-Modus** where you need to choose which line who sings. Really bad UI unfortunately. This will create an .ini file. CAREFUL, once you click on **Duett-Modus** again, this file will always be overwritten, so make a backup before. You can NOT edit it with the tool, only recreate it from scratch, so be accurate when doing it. You could edit the .ini file manually afterwards but it's hard to guess which line is which.
+- When you get an access violation exception, most likely the format of your txts is wrong - make sure they are UTF-8, not UTF-8 with BOM.
+
+### When it gets stuck and the log files don't update
+- Most likely something is wrong with your .txt song files. This will lead to the whole operation getting stuck with no feedback (You can kill singstar creator via the task manager).
+- Known issues are:
+  - Use of commas instead of dots
+  - Lines starting with an R (this is an unknown annotation to singstar)
+  - Sometimes negative timestamps for the beats are a problem
+
 
 ## Reducing BPM with the original Ultrastar (ingame editor)
 
