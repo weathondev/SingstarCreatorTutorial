@@ -70,6 +70,7 @@ The program is in german, but there are not many things that need to be done it 
 [`ContextMenu`](https://github.com/weathondev/SingstarCreatorTutorial/raw/main/ContextMenu_english.png)
 The program expects as an input, an Ultrastar txt file (lyrics & mappings), a music file, a video file and a cover image. All of this is provided when you download songs from the [`spanish Ultrastar webpage`](https://ultrastar-es.org/en), if they don't have all the songs you want you can also check out the [`german one`](http://usdb.animux.de/) but they only provide the txt files. The easiest/quickest way to get the media files is by downloading from Youtube (Jdownloader2 is a really big help here, you can even set it up so it automatically converts the music file to mp3).
 Flow is the following: 
+- Start Singstar creator WITH administrator settings - if you don't do this the ESL patching will fail silently and while you can use the iso files via OPL you won't be able to burn them and use them directly.
 - download some songs, add them via **Ordner hinzufügen**
 - - Sometimes the program will show you an unhandled exception, that happens when txt files with an encoding different from UTF-8 are added (e.g. UTF8 with BOM). You can easily fix this by opening the txt files in Notepad++, change the encoding to UTF-8 and save the file again.
 - go through each added song, right-click on it and click **Song überprüfen**, if it returns **TXT ist in Ordnung** the song is fine, sometimes it returns **...BPM ist zu schnell** which means you need to lower the BPM in the .txt file.
